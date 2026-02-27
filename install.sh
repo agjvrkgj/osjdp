@@ -105,6 +105,22 @@ EOF
     systemctl daemon-reload
     systemctl enable stream-notify >/dev/null 2>&1
     systemctl restart stream-notify
+
+    # 设置 Telegram Bot 快捷菜单命令
+    echo -e "${YELLOW}正在注册 Telegram 快捷菜单...${RESET}"
+    curl -s -X POST "https://api.telegram.org/bot$bot_token/setMyCommands" \
+         -H "Content-Type: application/json" \
+         -d '{
+            "commands": [
+                {"command": "add", "description": "添加监控 (/add 平台 ID 别名)"},
+                {"command": "del", "description": "删除监控 (/del 平台 ID)"},
+                {"command": "list", "description": "查看列表和在线状态"},
+                {"command": "check", "description": "立即检查一次在线状态"},
+                {"command": "status", "description": "查看机器人运行状态"},
+                {"command": "help", "description": "显示命令使用帮助"}
+            ]
+         }' > /dev/null
+
     
     echo -e "\n${GREEN}✅ 安装并启动成功！${RESET}"
     echo -e "你可以去 Telegram 向你的机器人发送 ${YELLOW}/help${RESET} 查看命令了。"
