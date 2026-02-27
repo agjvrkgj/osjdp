@@ -49,8 +49,8 @@ if [[ "$choice" == "1" ]]; then
     
     # 下载核心文件 (假设从 GitHub raw 下载，后续替换为真实地址)
     echo -e "${YELLOW}下载机器人文件...${RESET}"
-    curl -s -L "https://raw.githubusercontent.com/USER/stream-notify-bot/main/main.py" -o $INSTALL_DIR/main.py
-    curl -s -L "https://raw.githubusercontent.com/USER/stream-notify-bot/main/requirements.txt" -o $INSTALL_DIR/requirements.txt
+    curl -s -L "https://raw.githubusercontent.com/agjvrkgj/osjdp/main/main.py" -o $INSTALL_DIR/main.py
+    curl -s -L "https://raw.githubusercontent.com/agjvrkgj/osjdp/main/requirements.txt" -o $INSTALL_DIR/requirements.txt
     
     # 检查是否下载成功
     if [ ! -s "$INSTALL_DIR/main.py" ]; then

@@ -15,7 +15,7 @@
 在你的 Linux 终端（Ubuntu/Debian/CentOS）中运行以下命令：
 
 ```bash
-bash <(curl -sL https://raw.githubusercontent.com/USER/stream-notify-bot/main/install.sh)
+bash <(curl -sL https://raw.githubusercontent.com/agjvrkgj/osjdp/main/install.sh)
 ```
 
 *(请将链接中的 `USER` 替换为你的 GitHub 用户名)*
