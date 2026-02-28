@@ -307,8 +307,7 @@ def cmd_list(bot: TelegramBot, chat_id: str):
             if is_live:
                 if plat == "panda":
                     room_url = f"https://www.pandalive.co.kr/live/play/{uid}"
-                    proxy_url = f"https://5721004.xyz/player/pandalive.html?url={uid}"
-                    link_text = f" - <a href=\"{room_url}\">官方</a> | <a href=\"{proxy_url}\">免登代理</a>"
+                    link_text = f" - <a href=\"{room_url}\">直播间</a>"
                 elif plat == "soop":
                     room_url = f"https://play.sooplive.co.kr/{uid}"
                     link_text = f" - <a href=\"{room_url}\">直播间</a>"
@@ -375,11 +374,6 @@ def check_streamers_core(bot: TelegramBot) -> int:
                 if info.get("viewers"):
                     msg += f"👥 观众: {info['viewers']}\n"
                 msg += f"\n🔗 <a href=\"{info.get('room_url','')}\">进入官方直播间</a>"
-
-                if plat == "panda" and info.get("proxy_url"):
-                    msg += f"\n🌐 <a href=\"{info['proxy_url']}\">免登录网页播放</a>"
-                if plat == "panda" and info.get("m3u8"):
-                    msg += f"\n\n📻 M3U8流: \n<code>{info['m3u8']}</code>"
 
                 bot.broadcast(msg)
                 notifications += 1
